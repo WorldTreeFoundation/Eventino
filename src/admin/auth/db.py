@@ -1,4 +1,7 @@
-class AuthDB:    
+from db import get_db_conn
+
+
+class AuthDB:
     @staticmethod
     def server_has_admin() -> bool:
         """Check if server has admin
@@ -6,8 +9,12 @@ class AuthDB:
         Returns:
             bool
         """
-        # TODO
-        return False
+        conn, cur = get_db_conn()
+        cur.execute("SELECT count(*) FROM admin")
+        result = cur.fetchone()[0] > 0
+        cur.close()
+        conn.close()
+        return result
 
     @staticmethod
     def set_admin(user_id: int) -> bool:
@@ -16,5 +23,9 @@ class AuthDB:
         Returns:
             bool: ok status
         """
-        # TODO
+        conn, cur = get_db_conn()
+        cur.execute("INSERT INTO admin VALUES (%s)", (user_id,))
+        conn.commit()
+        cur.close()
+        conn.close()
         return True
