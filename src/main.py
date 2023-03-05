@@ -1,8 +1,8 @@
-from admin import AdminAuth
+from admin import AuthBot
 
 
 def main() -> None:
-    AdminAuth().ensure_server_has_admin()
+    AuthBot().start()
 
 
 if __name__ == "__main__":

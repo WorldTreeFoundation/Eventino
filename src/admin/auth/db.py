@@ -10,11 +10,11 @@ class AuthDB:
         return False
 
     @staticmethod
-    def set_admin() -> bool:
+    def set_admin(user_id: int) -> bool:
         """Set server's admin
 
         Returns:
             bool: ok status
         """
         # TODO
-        pass
+        return True

@@ -1,3 +1,3 @@
-from .auth import AdminAuth
+from .auth import AuthBot
 
-__all__ = ['AdminAuth']
+__all__ = ['AuthBot']
