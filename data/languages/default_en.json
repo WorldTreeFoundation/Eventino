@@ -1,0 +1,10 @@
+{
+    "phrases": [
+        {
+            "name": "hi",
+            "text": "Welcome to Eventino",
+            "reply_keyboard": ["events_list", "my_events_list", "contacts"],
+            "continuation": null
+        }
+    ]
+}

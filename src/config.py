@@ -1,4 +1,12 @@
 #####################################
+# tg.language
+#####################################
+BOT_LANGUAGE_PACK = "default_en.json"
+"""Bot language pack name wit `.json` extension"""
+LANGUAGE_PACK_FOLDER = "data/languages"
+"""Relative language pack folder path"""
+
+#####################################
 # admin.auth
 #####################################
 AUTH_EXPIRATION_SECS = 300
