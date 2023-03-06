@@ -1,3 +1,3 @@
-from .telegram import AuthBot
+from .tg import AuthBot
 
 __all__ = ['AuthBot']
