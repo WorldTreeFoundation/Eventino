@@ -1,6 +1,6 @@
 from .language import Language
 
-LANGUAGE = Language.parse()
+LANGUAGE = Language()
 """Telegram language"""
 
 __all__ = ['LANGUAGE']
