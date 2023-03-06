@@ -12,6 +12,7 @@ class Language(BaseModel):
 
     @staticmethod
     def parse() -> Language:
+        """Parse language pack file specified in config.py"""
         path = Language._get_pack_path()
         return Language.parse_file(path)
 
