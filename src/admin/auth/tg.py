@@ -11,8 +11,6 @@ from .auth_key import AuthKey
 
 
 class AuthBot:
-    TG_TOKEN_ENV_NAME = "TG_TOKEN"
-
     def __init__(self) -> None:
         self.app: Application
         self.auth = AuthKey()
