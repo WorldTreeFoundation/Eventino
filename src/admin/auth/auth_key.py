@@ -1,10 +1,10 @@
 from time import monotonic
 from random import randint
 
+from config import AUTH_EXPIRATION_SECS
+
 
 class AuthKey:
-    AUTH_EXPIRATION_SECS = 300
-
     def __init__(self) -> None:
         self._key: int
         self._gen_time: float
@@ -33,7 +33,7 @@ class AuthKey:
         Returns:
             bool: auth passed flag
         """
-        if self._gen_time - monotonic() > self.AUTH_EXPIRATION_SECS:
+        if self._gen_time - monotonic() > AUTH_EXPIRATION_SECS:
             self.generate_auth_key()
             return False
         if user_input != self._key:
