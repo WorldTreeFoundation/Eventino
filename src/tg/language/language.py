@@ -2,7 +2,7 @@ from pprint import pformat
 from telegram.ext import ConversationHandler
 
 from tg.language.phrase import Phrase
-from tg.language.language_parser import LanguageParser
+from tg.language.phrases_parser import PhrasesParser
 
 
 class Language:
@@ -11,7 +11,7 @@ class Language:
         self._parse_phrases()
 
     def _parse_phrases(self) -> None:
-        parsed_phrases = LanguageParser.parse()
+        parsed_phrases = PhrasesParser.parse()
 
         for phrase in parsed_phrases:
             if phrase.name in self._phrases:

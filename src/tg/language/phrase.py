@@ -8,5 +8,9 @@ from tg.language.keyboard import Keyboard
 class Phrase(BaseModel):
     name: str
     text: str
-    reply_keyboard: Keyboard | None
+    keyboard: Keyboard | None
     continuation: int | str | None
+
+    @property
+    def reply_keyboard(self) -> list[list[str]]:
+        return self.keyboard.__root__
