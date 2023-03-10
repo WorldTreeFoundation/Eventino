@@ -1,7 +1,7 @@
 import os
 from pydantic import BaseModel
 
-from tg.language.phrase import Phrase
+from eventino.language.phrase import Phrase
 from config import BOT_LANGUAGE_PACK, LANGUAGE_PACK_FOLDER
 
 

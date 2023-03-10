@@ -1,8 +1,8 @@
 from pprint import pformat
 from telegram.ext import ConversationHandler
 
-from tg.language.phrase import Phrase
-from tg.language.phrases_parser import PhrasesParser
+from eventino.language.phrase import Phrase
+from eventino.language.phrases_parser import PhrasesParser
 
 
 class Language:

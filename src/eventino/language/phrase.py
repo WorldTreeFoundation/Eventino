@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pydantic import BaseModel
 
-from tg.language.keyboard import Keyboard
+from eventino.language.keyboard import Keyboard
 
 
 class Phrase(BaseModel):
