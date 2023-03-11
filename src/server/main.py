@@ -1,10 +1,10 @@
 import uvicorn
 
-from admin import AuthBot
+# from admin import AuthBot
 
 
 def main() -> None:
-    AuthBot().start()
+    # AuthBot().start()
     uvicorn.run(
         "app.app:app",
         host="0.0.0.0",

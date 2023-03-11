@@ -1,9 +1,9 @@
 from pprint import pformat
 from typing import Iterator
 
-from eventino.language.phrases.phrase import Phrase
-from eventino.language.phrases.phrases_parser import PhrasesParser
-from eventino.language.keyboards.keyboards_parser import KeyboardsParser
+from .phrases.phrase import Phrase
+from .phrases.phrases_parser import PhrasesParser
+from .keyboards.keyboards_parser import KeyboardsParser
 
 
 class Language:
