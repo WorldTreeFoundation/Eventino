@@ -10,7 +10,7 @@ class AuthDB:
             bool
         """
         conn, cur = get_db_conn()
-        cur.execute("SELECT count(*) FROM admin")
+        cur.execute("SELECT count(*) FROM admins")
         result = cur.fetchone()[0] > 0
         cur.close()
         conn.close()
@@ -24,7 +24,7 @@ class AuthDB:
             bool: ok status
         """
         conn, cur = get_db_conn()
-        cur.execute("INSERT INTO admin VALUES (%s)", (user_id,))
+        cur.execute("INSERT INTO admins VALUES (%s)", (user_id,))
         conn.commit()
         cur.close()
         conn.close()
