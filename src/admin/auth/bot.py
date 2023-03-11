@@ -6,13 +6,12 @@ from telegram.ext import (
     filters, MessageHandler,
 )
 
+from config import TG_TOKEN_ENV_NAME
 from .db import AuthDB
 from .auth_key import AuthKey
 
 
 class AuthBot:
-    TG_TOKEN_ENV_NAME = "TG_TOKEN"
-
     def __init__(self) -> None:
         self.app: Application
         self.auth = AuthKey()
@@ -47,11 +46,11 @@ class AuthBot:
         Returns:
             str: bot's token
         """
-        token = os.getenv(AuthBot.TG_TOKEN_ENV_NAME)
+        token = os.getenv(TG_TOKEN_ENV_NAME)
 
         if token is None:
             raise Exception(
-                f"you must provide env var '{AuthBot.TG_TOKEN_ENV_NAME}'"
+                f"you must provide env var '{TG_TOKEN_ENV_NAME}'"
                 " with your bot's telegram token"
             )
 
