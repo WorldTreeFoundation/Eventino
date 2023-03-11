@@ -1,10 +1,10 @@
 from admin import AuthBot
-from tg.language import LANGUAGE
+from logger import run_logger
 
 
 def main() -> None:
     AuthBot().start()
-    print(LANGUAGE)
+    run_logger()
 
 
 if __name__ == "__main__":
