@@ -1,4 +1,4 @@
-from db import get_db_conn
+from database import get_db_conn
 
 
 class AuthDB:
