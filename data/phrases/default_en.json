@@ -1,0 +1,24 @@
+{
+    "pack": [
+        {
+            "name": "hi",
+            "text": "Welcome to Eventino",
+            "keyboard": "main_menu"
+        },
+        {
+            "name": "All events",
+            "text": "Choose event",
+            "keyboard": null
+        },
+        {
+            "name": "My events",
+            "text": "Choose event",
+            "keyboard": null
+        },
+        {
+            "name": "Contacts",
+            "text": "github.com/eightlay",
+            "keyboard": null
+        }
+    ]
+}

@@ -1,5 +1,5 @@
 from pydantic import BaseModel
 
 
-class Keyboard(BaseModel):
+class Options(BaseModel):
     __root__: list[list[str]]

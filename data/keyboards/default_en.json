@@ -1,0 +1,8 @@
+{
+    "pack": [
+        {
+            "name": "main_menu",
+            "options": [["All events"], ["My events"], ["Contacts"]]
+        }
+    ]
+}
