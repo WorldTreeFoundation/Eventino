@@ -1,25 +1,26 @@
 from fastapi import APIRouter
-from fastapi.responses import JSONResponse
-from fastapi.encoders import jsonable_encoder
 
+from .db.models import Event
+from .db.tables import events
+from .db.connection import database
 
 router = APIRouter()
 
 
-@router.get(
-    "/event",
-    status_code=201,
-)
-def all_events() -> JSONResponse:
-    return JSONResponse(jsonable_encoder({"events": ['event1', 'event2']}), 200)
+@router.on_event("startup")
+async def startup():
+    await database.connect()
+
+
+@router.on_event("shutdown")
+async def shutdown():
+    await database.disconnect()
 
 
 @router.get(
-    "/event/{user_id}",
-    status_code=201,
+    "/events/",
+    response_model=list[Event],
 )
-def all_events(user_id: int) -> JSONResponse:
-    return JSONResponse(jsonable_encoder({
-        "user_id": user_id,
-        "events": ['event1', 'event2']
-    }), 200)
+async def all_events():
+    query = events.select()
+    return await database.fetch_all(query)
