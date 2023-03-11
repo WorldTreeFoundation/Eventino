@@ -1,8 +1,9 @@
 from pprint import pformat
-from telegram.ext import ConversationHandler
+from typing import Iterator
 
-from eventino.language.phrase import Phrase
-from eventino.language.phrases_parser import PhrasesParser
+from eventino.language.phrases.phrase import Phrase
+from eventino.language.phrases.phrases_parser import PhrasesParser
+from eventino.language.keyboards.keyboards_parser import KeyboardsParser
 
 
 class Language:
@@ -11,21 +12,8 @@ class Language:
         self._parse_phrases()
 
     def _parse_phrases(self) -> None:
-        parsed_phrases = PhrasesParser.parse()
-
-        for phrase in parsed_phrases:
-            if phrase.name in self._phrases:
-                raise Exception(f"phrase '{phrase.name}' has duplicate")
-            self._phrases[phrase.name] = phrase
-
-        for phrase in self._phrases.values():
-            if phrase.continuation is None:
-                phrase.continuation = ConversationHandler.END
-            elif phrase.continuation not in self._phrases:
-                raise Exception(
-                    f"phrase '{phrase.name}' requires "
-                    f"phrase '{phrase.continuation}' as continuation"
-                )
+        parsed_keyboards = KeyboardsParser.parse()
+        self._phrases = PhrasesParser.parse(keyboards=parsed_keyboards)
 
     def __repr__(self) -> str:
         return pformat(self._phrases)
@@ -35,3 +23,6 @@ class Language:
 
     def __getitem__(self, phrase_name: str) -> Phrase:
         return self._phrases[phrase_name]
+
+    def __iter__(self) -> Iterator[Phrase]:
+        return iter(self._phrases.values())

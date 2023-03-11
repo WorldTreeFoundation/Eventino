@@ -1,10 +1,10 @@
-from admin import AuthBot
-from tg.language import LANGUAGE
+# from admin import AuthBot
+from eventino.language.language import Language
 
 
 def main() -> None:
-    AuthBot().start()
-    print(LANGUAGE)
+    # AuthBot().start()
+    print(Language())
 
 
 if __name__ == "__main__":
