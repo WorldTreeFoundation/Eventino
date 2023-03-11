@@ -1,4 +1,5 @@
 from pprint import pformat
+from typing import Iterator
 from telegram.ext import ConversationHandler
 
 from eventino.language.phrase import Phrase
@@ -35,3 +36,6 @@ class Language:
 
     def __getitem__(self, phrase_name: str) -> Phrase:
         return self._phrases[phrase_name]
+
+    def __iter__(self) -> Iterator[Phrase]:
+        return iter(self._phrases.values())
