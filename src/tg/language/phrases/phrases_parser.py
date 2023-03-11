@@ -1,7 +1,7 @@
 from .phrase import Phrase
 from config import PHRASES_PACK_PATH
-from eventino.language.parser.parser import Parser
-from eventino.language.keyboards.keyboard import Keyboard
+from language.parser.parser import Parser
+from language.keyboards.keyboard import Keyboard
 
 
 class PhrasesParser(Parser[Phrase]):

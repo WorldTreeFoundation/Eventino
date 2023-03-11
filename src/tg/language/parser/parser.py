@@ -4,8 +4,8 @@ from typing import Generic, TypeVar
 from abc import ABC, abstractstaticmethod
 
 from config import LANGUAGE_PACK_FOLDER
-from eventino.language.phrases.phrase import Phrase
-from eventino.language.keyboards.keyboard import Keyboard
+from language.phrases.phrase import Phrase
+from language.keyboards.keyboard import Keyboard
 
 PackType = TypeVar('PackType', Phrase, Keyboard)
 

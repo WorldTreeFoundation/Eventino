@@ -1,6 +1,6 @@
 from .keyboard import Keyboard
 from config import KEYBOARDS_PACK_PATH
-from eventino.language.parser.parser import Parser
+from language.parser.parser import Parser
 
 
 class KeyboardsParser(Parser[Keyboard]):

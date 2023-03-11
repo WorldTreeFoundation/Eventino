@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from eventino.language.keyboards.keyboard import Keyboard
+from language.keyboards.keyboard import Keyboard
 
 
 class Phrase(BaseModel):
